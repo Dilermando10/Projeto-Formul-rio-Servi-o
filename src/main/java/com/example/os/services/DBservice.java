@@ -28,7 +28,9 @@ public class DBservice {
 	
 	public void intanciaDB() {
 		Tecnico t1 = new Tecnico(null, "Dilermando", "043.304.620-10", "(34)98484-8484");
+		Tecnico t2 = new Tecnico(null, "Linus", "885.971.900-35", "(34)98484-8485");
 		Cliente c1 = new Cliente(null, "Betina Campos", "184.421.510-52", "(34)98485-8484");
+		
 		OS os1 = new OS(null, Prioridade.ALTA, "Teste create OD", Status.ANDAMENTO, t1, c1);
 
 		t1.getList().add(os1); // o tecnico 1 "T1" vai chamar a lista de Ordem de serviços "OS" e adicionar
@@ -36,7 +38,7 @@ public class DBservice {
 		c1.getList().add(os1); // o cliente 1 "c1" vai chamar a lista de Ordem de serviços "OS" e adicionar
 								// nessa lista a ordem de servico "os1"
 
-		tecnicoRepository.saveAll(Arrays.asList(t1));
+		tecnicoRepository.saveAll(Arrays.asList(t1,t2));
 		clienteRepository.saveAll(Arrays.asList(c1));
 		osRepository.saveAll(Arrays.asList(os1));
 	}

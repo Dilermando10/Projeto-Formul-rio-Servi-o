@@ -1,5 +1,7 @@
 package com.example.os.config;
 
+import java.text.ParseException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +18,7 @@ public class TestConfig {
 	private DBservice dbService;
 
 	@Bean
-	public void intanciaDB() {
+	public void intanciaDB()throws ParseException {
 		this.dbService.intanciaDB();
 	}
 }
